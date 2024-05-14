@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+
+header {
+    background-color: #f2f2f2;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  /* Estilos para las secciones */
+  .descripcion, .servicios, .acerca-de {
+    margin: 20px 0;
+  }
+  
+  /* Otros estilos */
+ 
+  
+  
