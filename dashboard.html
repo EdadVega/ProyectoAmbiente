@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Dashboard</title>
 </head>
+
 <body>
   <header>
     <nav>
@@ -19,18 +21,38 @@
     <h1>Dashboard</h1>
     <div class="graficos">
       <!-- Aquí irían los gráficos que muestran los niveles de contaminantes atmosféricos -->
-      <img src="grafico1.png" alt="Gráfico 1">
-      <img src="grafico2.png" alt="Gráfico 2">
+      <div class="gafrico-uno">
+        <h2>Niveles en la decada de los 90s</h2>
+        <img src="./img/graficoUno.jpg" alt="Gráfico 1">
+      </div>
+      <div class="grafico-dos">
+        <h2>Niveles en la epoca actual</h2>
+        <img src="./img/graficodos.jpg" alt="Gráfico 2">
+      </div>
+
+
     </div>
     <div class="estadisticas">
-      <h2>Estadísticas</h2>
+      <h2>Estadísticas: </h2>
       <p>Promedio de partículas PM2.5: 15 µg/m³</p>
       <p>Niveles de ozono: 0.03 ppm</p>
     </div>
     <div class="mapa">
       <!-- Aquí iría un mapa interactivo que muestra los puntos de monitoreo en la ciudad -->
-      <iframe src="mapa.html" width="100%" height="400"></iframe>
+      <img src="./img/mapa.jpg" width="100%" height="400"></img>
     </div>
+    <footer class="acerca-de">    
+      <div>
+        <h3><a href="https://github.com/EdadVega">Eddy Vega</a></h3>
+      </div>
+      <div>
+        <h3><a href="https://github.com/danielBuGo/">Daniel Builes</a></h3>
+      </div>
+      <div>
+        <h3><a href="https://github.com/garcescamilo/">Camilo Garces</a> </h3>
+      </div>
+    </footer>
   </section>
 </body>
+
 </html>

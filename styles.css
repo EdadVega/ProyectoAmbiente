@@ -10,6 +10,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #eeeeee52;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
 
 header {
@@ -61,16 +65,27 @@ nav ul li a {
 }
 
 .acerca-de {
-  margin: 20px 0;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+  background-color: #098fddea;
+  color: aliceblue;
+  height: auto;
 }
 
-
+a {
+  color: aliceblue;
+}
 
 .servicios {
 
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: .5rem;
+  align-items: stretch;
 }
 
 .servicios-texto {
@@ -80,4 +95,35 @@ nav ul li a {
   text-align: center;
   background-image: url(/img/alerta.png);
 
+}
+
+h2{
+  color: #5fa7e7;
+}
+
+.graficos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  margin: 5rem;
+}
+
+.graficos h2 {
+  text-align: center;
+}
+
+.dashboard h1 {
+  text-align: center;
+}
+
+.dashboard {
+  background-color: rgba(111, 202, 230, 0.308);
+}
+
+.estadisticas {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
