@@ -17,9 +17,18 @@ body {
 }
 
 header {
-  background-color: #7fcdfaea;
+  background-image: url(/img/alerta.png);
+  background-size: cover;
   font-weight: bold;
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.icon1 img{
+  width: 7%;
+  margin-left: 3%;
+  filter: invert(1);
 }
 
 nav ul {
@@ -39,10 +48,17 @@ nav ul li a {
   color: white;
 }
 
+nav ul li a:hover{
+  transform: scale(1);
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+}
+
 /* Estilos para las secciones */
 .descripcion {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   height: 90vh;
   color: white;
@@ -54,47 +70,60 @@ nav ul li a {
   background-attachment: fixed;
 }
 
+.hacemosCont{
+  background-color:rgba(0, 0, 0, 0.767);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.hacemos{
+  margin: 2% auto;
+}
+.hacemos h2{
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #98caf7;
+}
 .texto-hacemos {
-  background-color: rgba(48, 47, 47, 0.226);
   width: 70%;
-  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.acerca-de {
-  margin-top: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-decoration: none;
-  background-color: #098fddea;
-  color: aliceblue;
-  height: auto;
-}
 
 a {
   color: aliceblue;
 }
 
 .servicios {
-
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  gap: .5rem;
-  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .servicios-texto {
   background-color: rgba(90, 89, 89, 0.103);
-  margin: 20px;
+  margin: 1.5% 0;
   color: white;
   text-align: center;
   background-image: url(/img/alerta.png);
+  background-size: cover;
+  font-size: 2.5em;
+}
 
+ /* cards refacto */
+.card{
+  width:18% !important;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.card-title{ 
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
 }
 
 h2{
@@ -127,3 +156,57 @@ h2{
   justify-content: space-around;
   align-items: center;
 }
+ /* Footer */
+.acerca-de {
+  margin-top: auto;
+  text-decoration: none;
+  background:#1c1c1c;
+  color: aliceblue;
+  height: auto;
+  padding: 2% 1%;
+}
+
+.acerca-de h3{
+  font-weight: 700;
+}
+.footercont{
+  display: flex;
+  justify-content: space-evenly;
+}
+.socialCompl{
+  text-align: center;
+}
+.social{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4% auto;
+ 
+}
+
+.integrantes{
+  text-align: center;
+}
+
+.integrantes h4{
+  font-weight: 700;
+  color: #4d4d4d;
+}
+
+.integrantes ul{
+  list-style: none;
+  padding: 0;
+}
+
+.integrantes ul li a{
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.integrantes ul li a:hover{
+  color: #3f93c5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* Footer nuevo */
