@@ -1,38 +1,83 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee52;
+}
 
 header {
-    background-color: #f2f2f2;
-    padding: 10px 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  
-  /* Estilos para las secciones */
-  .descripcion, .servicios, .acerca-de {
-    margin: 20px 0;
-  }
-  
-  /* Otros estilos */
- 
-  
-  
+  background-color: #7fcdfaea;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilos para las secciones */
+.descripcion {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+  color: white;
+  width: 100%;
+  background-image: url(/img/somos.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.texto-hacemos {
+  background-color: rgba(48, 47, 47, 0.226);
+  width: 70%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.acerca-de {
+  margin: 20px 0;
+}
+
+
+
+.servicios {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.servicios-texto {
+  background-color: rgba(90, 89, 89, 0.103);
+  margin: 20px;
+  color: white;
+  text-align: center;
+  background-image: url(/img/alerta.png);
+
+}
