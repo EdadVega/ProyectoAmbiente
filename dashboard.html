@@ -46,6 +46,7 @@
             <aside id="comment-sect"></aside>
           </div>
         </div> -->
+
       </div>
      
       <div class="grid">
@@ -56,6 +57,7 @@
             </div>
           </div>
         </div>
+
 
       </div>
   
@@ -169,6 +171,7 @@
                 </tr>
               </tbody>
             </table>
+
           </div>
         </div>
         
@@ -211,6 +214,7 @@
           </div>
         </div>
       </div>
+   
   </section>
 </main>
 
@@ -222,6 +226,7 @@
 <script>
 
 function cssvar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name);}
+
 
 var toggleBtn = document.querySelector("button.toggleNav"),
   main = document.querySelector("main"),
@@ -269,7 +274,7 @@ function layoutTiles(initial) {
     
     var time = 0.2;
     var y = i * margin + (i);
-
+    
     if (initial) {
       time = 0;
     }
@@ -289,6 +294,7 @@ var data = chunk(results, 5).map((d, i) => ({
     "severe injuries": d[3],
     "deaths": d[4]
   })).sort((a, b) => a[field] - b[field]);
+//console.log(data);
 
 var bardata = {
   labels: data.map(x=>x["type"]),
@@ -312,6 +318,7 @@ new Chart('chart3', {
   options: options,
   data: bardata
 });
+
 
 var ctx = document.getElementById("chart2").getContext('2d');
 
@@ -340,13 +347,14 @@ var myChart = new Chart(ctx, {
             borderColor:  cssvar('--secondary'),
             
             borderWidth: 1, 
-            type: 'line', 
+            type: 'line',
             fill: false        
         }]
     },
     options: {
       responsive: true, 
       maintainAspectRatio: false, 
+
     }
 
 });
@@ -358,15 +366,15 @@ var myChart = new Chart(ctx, {
     data: {
         labels: data.map(x=>x["type"]),
         datasets: [{    
-            data: data.map(x=>x["injuries"]),
+            data: data.map(x=>x["injuries"]), 
           
-            borderColor: [ cssvar('--tertiary'), cssvar('--bckg'), cssvar('--cta'), cssvar('--secondary'),  cssvar('--quaternary'), cssvar('--quinary'), cssvar('--senary'), cssvar('--septenary'), cssvar('--octonary'), cssvar('--nonary')], 
-            backgroundColor:  [ cssvar('--tertiary'), cssvar('--bckg'), cssvar('--cta'), cssvar('--secondary'), cssvar('--quaternary'), cssvar('--quinary'), cssvar('--senary'), cssvar('--septenary'), cssvar('--octonary'), cssvar('--nonary')], 
+            borderColor: [ cssvar('--tertiary'), cssvar('--bckg'), cssvar('--cta'), cssvar('--secondary'),  cssvar('--quaternary'), cssvar('--quinary'), cssvar('--senary'), cssvar('--septenary'), cssvar('--octonary'), cssvar('--nonary')], // Add custom color border 
+            backgroundColor:  [ cssvar('--tertiary'), cssvar('--bckg'), cssvar('--cta'), cssvar('--secondary'), cssvar('--quaternary'), cssvar('--quinary'), cssvar('--senary'), cssvar('--septenary'), cssvar('--octonary'), cssvar('--nonary')], // Add custom color background (Points and Fill)
             borderWidth: 1 
         }]},         
     options: {
       responsive: true, 
-      maintainAspectRatio: false,
+      maintainAspectRatio: false, 
 
     }
 });
@@ -438,6 +446,7 @@ function ipConverter(input) {
 
 async function getLocationByIpOrInt(ipAddress) {
     try {
+    
         const decimalIp = typeof ipAddress == "string" ? ipAddress : ipConverter(ipAddress);
         
         const response = await fetch(`https://ipinfo.io/${decimalIp}/json`);
@@ -451,6 +460,7 @@ async function getLocationByIpOrInt(ipAddress) {
 
 
 document.getElementById('submitButton').addEventListener('click', function() {
+
     const inputValue = document.getElementById('addr').value;
 
     getLocationByIpOrInt(ipConverter(inputValue)).then(locationData => {
@@ -503,7 +513,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
                    .style("left", (d3.event.pageX + 15) + "px")     
                    .style("top", (d3.event.pageY - 30) + "px");    
               })   
-                    
+                  
               .on("mouseout", function(d) {       
                   div.transition()        
                      .duration(500)      
@@ -520,6 +530,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
                   ease: Power2.easeOut,
                   repeat: -1, 
                   yoyo: true,
+             
                 }
               );
 
@@ -529,13 +540,14 @@ document.getElementById('submitButton').addEventListener('click', function() {
         });
 });
 
+
 d3.json("https://raw.githubusercontent.com/jdamiani27/Data-Visualization-and-D3/master/lesson4/world_countries.json",Draw);
 setTimeout(() => { Plot(); },"500");
 
 
 function Draw(geo_data) {
   "use strict";
-
+  //console.log(geo_data);
   var path = d3.geo.path().projection(projection);
   SVG.selectAll("path")
     .data(geo_data.features)
@@ -550,6 +562,7 @@ function Draw(geo_data) {
 /* function Plot(){
     var datum = [{"city":"Freeport","state":"IL","lat":42.2891,"lng":-89.6346,"zip":61032,"country":"US","population":23884},{"city":"Johnston","state":"IA","lat":41.691,"lng":-93.7234,"zip":50131,"country":"US","population":23856},{"city":"Rosemont","state":"CA","lat":38.5478,"lng":-121.3553,"zip":"95827 95826","country":"US","population":23845},{"city":"Webster Groves","state":"MO","lat":38.5866,"lng":-90.3544,"zip":63119,"country":"US","population":23838},{"city":"Willoughby","state":"OH","lat":41.6459,"lng":-81.4084,"zip":"44094 44096","country":"US","population":23823},{"city":"Farragut","state":"TN","lat":35.8731,"lng":-84.1821,"zip":37934,"country":"US","population":23795},{"city":"Highland","state":"IN","lat":41.5483,"lng":-87.4588,"zip":46322,"country":"US","population":23794},{"city":"Fountain Hills","state":"AZ","lat":33.6073,"lng":-111.7398,"zip":"85268 85269","country":"US","population":23739},{"city":"Waverly","state":"MI","lat":42.7401,"lng":-84.6354,"zip":"48917 48908","country":"US","population":23723},{"city":"Champlin","state":"MN","lat":45.1702,"lng":-93.3903,"zip":55316,"country":"US","population":23666},{"city":"Lexington","state":"SC","lat":33.989,"lng":-81.2202,"zip":"29072 29071","country":"US","population":23665},{"city":"Roseburg","state":"OR","lat":43.2231,"lng":-123.352,"zip":"97470 97471","country":"US","population":23657},{"city":"Kenmore","state":"WA","lat":47.7516,"lng":-122.2489,"zip":98028,"country":"US","population":23611},{"city":"Fresno","state":"TX","lat":29.5357,"lng":-95.4696,"zip":77545,"country":"US","population":23608},{"city":"Jacksonville Beach","state":"FL","lat":30.2782,"lng":-81.4045,"zip":"32250 32240","country":"US","population":23583},{"city":"Middletown","state":"DE","lat":39.445,"lng":-75.7183,"zip":19709,"country":"US","population":23573},{"city":"Brookings","state":"SD","lat":44.3022,"lng":-96.7859,"zip":"57007 57006","country":"US","population":23530},{"city":"Gardner","state":"KS","lat":38.8122,"lng":-94.9275,"zip":66030,"country":"US","population":23488},{"city":"Griffin","state":"GA","lat":33.2418,"lng":-84.2748,"zip":"30224 30223","country":"US","population":23485},{"city":"Copiague","state":"NY","lat":40.6707,"lng":-73.3922,"zip":"11726 11757 11701","country":"US","population":23442},{"city":"Vega Baja","state":"PR","lat":18.4406,"lng":-66.3997,"zip":"00693","country":"US","population":23418},{"city":"Van Buren","state":"AR","lat":35.4483,"lng":-94.3528,"zip":"72956 72957","country":"US","population":23398},{"city":"Clinton","state":"UT","lat":41.1395,"lng":-112.0656,"zip":84015,"country":"US","population":23389},{"city":"West Springfield","state":"VA","lat":38.7771,"lng":-77.2268,"zip":22152,"country":"US","population":23372},{"city":"Rock Springs","state":"WY","lat":41.5947,"lng":-109.2209,"zip":"82901 82902","country":"US","population":23361},{"city":"Pottstown","state":"PA","lat":40.2508,"lng":-75.6445,"zip":19464,"country":"US","population":23356},{"city":"North Platte","state":"NE","lat":41.1263,"lng":-100.7641,"zip":"69101 69103","country":"US","population":23309},{"city":"Camp Springs","state":"MD","lat":38.8052,"lng":-76.9199,"zip":"20744 20746 20748","country":"US","population":23269},{"city":"Fernley","state":"NV","lat":39.5627,"lng":-119.1906,"zip":"89408 89406 89429","country":"US","population":23035},{"city":"Glassboro","state":"NJ","lat":39.7014,"lng":-75.1113,"zip":"08028","country":"US","population":23014},{"city":"Radcliff","state":"KY","lat":37.8204,"lng":-85.9365,"zip":"40160 42701 40159","country":"US","population":22981},{"city":"Watertown","state":"WI","lat":43.1893,"lng":-88.7285,"zip":"53098 53094","country":"US","population":22978},{"city":"Keene","state":"NH","lat":42.9494,"lng":-72.2998,"zip":"03431 03435","country":"US","population":22907},{"city":"Duncan","state":"OK","lat":34.5408,"lng":-97.9215,"zip":"73533 73055 73534","country":"US","population":22759},{"city":"Kapolei","state":"HI","lat":21.3399,"lng":-158.0677,"zip":96707,"country":"US","population":22701},{"city":"Fairhope","state":"AL","lat":30.5209,"lng":-87.8813,"zip":"36532 36559","country":"US","population":22605},{"city":"Biddeford","state":"ME","lat":43.4673,"lng":-70.4511,"zip":"04005 04006 04007","country":"US","population":22438},{"city":"Central Falls","state":"RI","lat":41.8901,"lng":-71.3934,"zip":"02863","country":"US","population":22359},{"city":"Ruston","state":"LA","lat":32.5328,"lng":-92.6363,"zip":"71272 71270","country":"US","population":22282},{"city":"Evans","state":"CO","lat":40.366,"lng":-104.739,"zip":"80645 80634 80620","country":"US","population":22092},{"city":"Pascagoula","state":"MS","lat":30.3666,"lng":-88.5506,"zip":"39581 39567 39595 39568 39569","country":"US","population":21904},{"city":"Shelby","state":"NC","lat":35.2904,"lng":-81.5451,"zip":"28150 28152 28151","country":"US","population":21712},{"city":"Gallup","state":"NM","lat":35.5182,"lng":-108.7431,"zip":87301,"country":"US","population":21672},{"city":"Gardner","state":"MA","lat":42.5845,"lng":-71.9868,"zip":"01440 01441","country":"US","population":21090},{"city":"South Burlington","state":"VT","lat":44.4622,"lng":-73.2202,"zip":"05403 05408 05407","country":"US","population":20241},{"city":"Badger","state":"AK","lat":64.8006,"lng":-147.3877,"zip":"99705 99711","country":"US","population":19182},{"city":"Weirton","state":"WV","lat":40.406,"lng":-80.5671,"zip":26062,"country":"US","population":18971},{"city":"Ansonia","state":"CT","lat":41.3443,"lng":-73.0689,"zip":"06401","country":"US","population":18954},{"city":"Ammon","state":"ID","lat":43.4745,"lng":-111.9568,"zip":"83401 83406 83403","country":"US","population":17921},{"city":"Jamestown","state":"ND","lat":46.9063,"lng":-98.6937,"zip":"58401 58402 58405","country":"US","population":15850},{"city":"Belgrade","state":"MT","lat":45.7789,"lng":-111.1736,"zip":59714,"country":"US","population":10941}]
 
+      // .data() takes an array of objects
       SVG.selectAll("circle")
         .data(datum)
         .enter()
@@ -566,6 +579,7 @@ function Draw(geo_data) {
         .attr("data-country", (d)=> d['country'] )
         .attr("data-postal", (d)=> d['zip'] )
         .attr("data-ip", (d)=> "No Ip data" )
+
 
         d3.select("svg").selectAll("circle")
           .on("mouseover", function(d) {      
@@ -591,13 +605,16 @@ function Draw(geo_data) {
               `)
              .style("left", (d3.event.pageX + 15) + "px")     
              .style("top", (d3.event.pageY - 30) + "px");    
-        })                
+        })   
+        // fade out tooltip on mouse out               
         .on("mouseout", function(d) {       
             div.transition()        
                .duration(500)      
                .style("opacity", 0);   
-        });
+        });//end hover
 
+
+      //animate circles
       var navTl = new TimelineMax();
       navTl.fromTo(SVG.selectAll("circle"), 0.75,
         {
@@ -610,9 +627,9 @@ function Draw(geo_data) {
           yoyo: true,
           //onUpdate: applyAngle
         }
-      );
+      );//end fromTO
 
-}
+}*/
 </script>
 
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -631,18 +648,16 @@ function Draw(geo_data) {
 		      return dateAll;
 		    }
 		  }
-		
 		var AddCommentForm = React.createClass({
 		  processComment: function(e) {
 		    e.preventDefault();
-		  
 		    var commentData = {
 		        commentName: this.refs.name.value,
 		        commentBody: this.refs.desc.value
 		      }
 		      
 		    this.props.addMyComment(commentData);
-		    
+		   
 		    this.refs.commentForm.reset();
 
 		  },
@@ -687,8 +702,10 @@ function Draw(geo_data) {
 		      comments: {}
 		    }
 		  },
-		  addComment: function(commentData) {
+		  		  addComment: function(commentData) {
+
 		    var TS = (new Date()).getTime();
+		  
 		    this.state.comments['comment-id' + TS] = commentData;
 		    this.setState({
 		      comments: this.state.comments
@@ -710,6 +727,7 @@ function Draw(geo_data) {
 		            .map(this.renderComment)
 		        }
 		        {
+		          
 		        }
 		        <AddCommentForm addMyComment={this.addComment}/>
 		        <div className="pre"><pre>{JSON.stringify(this.state, null, 2)}</pre></div>
@@ -727,9 +745,9 @@ function Draw(geo_data) {
     <div class="socialCompl">
       <h3>Calidad del aire</h3>
       <div class="social">
-        <a href="https://codepen.io/Juxtopposed" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" /></a>
-        <a href="https://twitter.com/juxtopposed" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/x.png" alt="" /></a>
-        <a href="https://youtube.com/@juxtopposed" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/youtube_1.png" alt="" /></a>
+        <a href="#" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" /></a>
+        <a href="#" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/x.png" alt="" /></a>
+        <a href="#" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/youtube_1.png" alt="" /></a>
       </div>
       <p style="color: #818181; font-size: smaller">2024 © All Rights Reserved</p>
     </div>
