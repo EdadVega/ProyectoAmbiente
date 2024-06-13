@@ -8,7 +8,7 @@ def construirAireDataFrame():
     datosAire = generarDatosCalidadAire()
     
     # Generamos el dataframe
-    aireDataFrame = pd.DataFrame(datosAire, columns=['nombre', 'comuna', 'ica', 'fecha', 'correo'])
+    aireDataFrame = pd.DataFrame(datosAire, columns=['nombre', 'comuna', 'ICA', 'fecha', 'correo'])
     
     # Limpiando el dataframe
     aireDataFrame.replace('sin', pd.NA, inplace=True)
@@ -19,7 +19,7 @@ def construirAireDataFrame():
     filtroCalidadAireMala = aireDataFrame.query("(ICA>=50) and (ICA<100)").value_counts()
     
     # Ordenando los datos para graficarlos
-    datosOrdenadosAire = aireDataFrame.groupby('comunna')['ica'].mean()  # El error estaba aquí, corregido de 'comunna' a 'comuna'
+    datosOrdenadosAire = aireDataFrame.groupby('comuna')['ICA'].mean()  # El error estaba aquí, corregido de 'comunna' a 'comuna'
     print(datosOrdenadosAire)
    
     # Grafico la info

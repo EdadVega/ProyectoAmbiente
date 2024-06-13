@@ -14,4 +14,3 @@ def ruidoAmbiental():
         listaDatos.append(encuesta)
         
     return listaDatos
-print(ruidoAmbiental())

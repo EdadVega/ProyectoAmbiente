@@ -14,4 +14,3 @@ def accesoAgua():
         listaDatos.append(encuesta)
         
     return listaDatos
-print(accesoAgua())
