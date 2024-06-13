@@ -30,7 +30,7 @@
 
         <div class="col-3-4">
           <div class="module no-pad">
-            <!-- map -->
+            
               <div id="map">
                 <svg id="svgmap" viewBox="0 0 2000 1000"   preserveAspectRatio="xMidYMid"></svg>
               </div>
@@ -41,11 +41,7 @@
           </div>
         </div>
 
-         <!-- <div class="col-1-4">
-          <div class="module">
-            <aside id="comment-sect"></aside>
-          </div>
-        </div> -->
+         
 
       </div>
      
@@ -191,7 +187,7 @@
         </div>
   
       </div>
-      <!-- /grid -->
+      
 
       <!-- grid -->
       <div class="grid">
@@ -216,7 +212,7 @@
           </div>
         </div>
       </div>
-      <!-- /grid -->
+      
   </section>
 </main>
 
@@ -244,9 +240,7 @@ function CollapseNav() {
 
 
 
-/*==========================================================
-MOVEABLE TILES
-==========================================================*/
+
 var tiles  = $(".tile");
 var margin = 5;
 var height = tiles.height();
@@ -256,29 +250,26 @@ Draggable.create(".tile", {
   onDragEnd: checkCollisions
 });
 
-// Start the inital tile layout
+
 layoutTiles(true);
 
-// Run a hit test on all the tiles
+
 function checkCollisions() {
   var i = tiles.length;
   while (i--) {
-    // Hit test the tiles and change their position if needed
+    
     if (this.hitTest(tiles[i], threshold)) {
       changePosition($(this.target), $(tiles[i]));
     }     
   }
   
-  // Move the tiles to their new position
+ 
   layoutTiles(); 
 }
 
-// Change position between two elements
-// This just changes the DOM structure, it doesn't actually move them visually
-// This places the elements in the correct order so that they can be 
-// Indexed correctly in the layoutTiles function
+
 function changePosition(target1, target2) {
-  // Compare indexes to determine if tile should be inserted before or after
+  
   if (target1.data("index") > target2.data("index")) {
     target1.insertBefore(target2);
   } else {
