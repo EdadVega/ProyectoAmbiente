@@ -2,7 +2,7 @@ import random
 
 def generarDatosCalidadAire():
     listaDatos = []
-    for i in range(5):  # Modifica el rango según sea necesario
+    for i in range(10):  # Modifica el rango según sea necesario
         nombre = random.choice(['lina castro', 'eddy vega', 'camilo garces', 'bella builes', 'victor aristizabal'])
         comuna = random.randint(1, 14)
         ICA = random.randint(10, 80)
@@ -26,18 +26,32 @@ def generar_html():
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calidad del Aire</title>
+        <link rel="stylesheet" href="../styles.css">
     </head>
-    <body>
-        <h1>Tabla de Calidad del Aire</h1>
-        <table border="1">
-            <tr>
-                <th>Nombre</th>
-                <th>Comuna</th>
-                <th>ICA</th>
-                <th>Fecha</th>
-                <th>Correo</th>
-            </tr>
+     <header>
+  <div class="icon1">
+    <img src="../img/icon1.png" alt="">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+</header> 
+   <body class="body">
+        <div class="table-container">
+            <h1 class="table-title">Tabla de Calidad del Agua</h1>
+            <table class="styled-table">
+                <tr>
+                    <th class="table-header">Nombre</th>
+                    <th class="table-header">Comuna Mes</th>
+                    <th class="table-header">ICA</th>
+                    <th class="table-header">Fecha</th>
+                    <th class="table-header">Correo</th>
+                </tr>
     """
+
 
     # Agregar filas de datos a la tabla
     for dato in datos:
@@ -48,13 +62,14 @@ def generar_html():
     
     # Cerrar el contenido HTML
     html_content += """
-        </table>
+          </table>
+        </div>
     </body>
     </html>
     """
 
     # Escribir el contenido en un archivo HTML
-    with open("calidad_del_aire.html", "w") as file:
+    with open("./tablasGeneradas/calidad_del_aire.html", "w") as file:
         file.write(html_content)
 
 # Generar el archivo HTML

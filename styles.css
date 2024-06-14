@@ -25,7 +25,7 @@ header {
   align-items: center;
 }
 
-.icon1 img{
+.icon1 img {
   width: 7%;
   margin-left: 3%;
   filter: invert(1);
@@ -48,7 +48,7 @@ nav ul li a {
   color: white;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   transform: scale(1);
   color: rgb(46, 46, 46);
   text-decoration: none;
@@ -70,22 +70,25 @@ nav ul li a:hover{
   background-attachment: fixed;
 }
 
-.hacemosCont{
-  background-color:rgba(0, 0, 0, 0.767);
+.hacemosCont {
+  background-color: rgba(0, 0, 0, 0.767);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.hacemos{
+
+.hacemos {
   margin: 2% auto;
 }
-.hacemos h2{
+
+.hacemos h2 {
   font-weight: 700;
   font-size: 2.5em;
   color: #98caf7;
 }
+
 .texto-hacemos {
   width: 70%;
   display: flex;
@@ -114,19 +117,20 @@ a {
   font-size: 2.5em;
 }
 
- /* cards refacto */
-.card{
-  width:18% !important;
+/* cards refacto */
+.card {
+  width: 18% !important;
   text-align: center;
   margin-bottom: 2%;
 }
-.card-title{ 
+
+.card-title {
   font-size: 1em;
   font-weight: 700;
   text-align: center;
 }
 
-h2{
+h2 {
   color: #5fa7e7;
 }
 
@@ -156,53 +160,57 @@ h2{
   justify-content: space-around;
   align-items: center;
 }
- /* Footer */
+
+/* Footer */
 .acerca-de {
   margin-top: auto;
   text-decoration: none;
-  background:#1c1c1c;
+  background: #1c1c1c;
   color: aliceblue;
   height: auto;
   padding: 2% 1%;
 }
 
-.acerca-de h3{
+.acerca-de h3 {
   font-weight: 700;
 }
-.footercont{
+
+.footercont {
   display: flex;
   justify-content: space-evenly;
 }
-.socialCompl{
+
+.socialCompl {
   text-align: center;
 }
-.social{
+
+.social {
   display: flex;
   justify-content: space-evenly;
   margin: 4% auto;
- 
+
 }
 
-.integrantes{
+.integrantes {
   text-align: center;
 }
 
-.integrantes h4{
+.integrantes h4 {
   font-weight: 700;
   color: #4d4d4d;
 }
 
-.integrantes ul{
+.integrantes ul {
   list-style: none;
   padding: 0;
 }
 
-.integrantes ul li a{
+.integrantes ul li a {
   font-size: 1.1em;
   text-decoration: none;
 }
 
-.integrantes ul li a:hover{
+.integrantes ul li a:hover {
   color: #3f93c5;
   font-weight: 700;
   text-decoration: none;
@@ -210,3 +218,75 @@ h2{
 
 
 /* Footer nuevo */
+
+
+/*ESTILOS TABLAS GENERADAS*/
+
+/* styles.css */
+
+
+.body {
+  background: #053bee80;
+
+}
+
+.table-container {
+  max-width: 800px;
+  margin: 20px auto;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(13, 28, 245, 0.959);
+  padding: 20px;
+
+
+}
+
+.table-title {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+
+
+  margin-top: 10px;
+}
+
+.styled-table th,
+.styled-table td {
+
+  padding: 12px;
+  text-align: center;
+}
+
+.styled-table th {
+  background-color: #0008fc;
+
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.styled-table td {
+  background-color: #06084752;
+  color: white;
+
+
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #06084752;
+
+}
+
+
+
+.styled-table tr:hover {
+  background-color: #11d5f8;
+  transition: background-color 0.3s ease;
+}
