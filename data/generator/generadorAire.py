@@ -64,6 +64,8 @@ def generar_html():
     html_content += """
           </table>
         </div>
+        <h1 class="titulo-img-generada">TABLA GRAFICAMENTE</h1>
+        <img class="img-generada" src="../img/calidadaire.png" alt="aire">
     </body>
     </html>
     """

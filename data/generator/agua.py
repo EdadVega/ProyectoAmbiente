@@ -28,6 +28,7 @@ def generar_html():
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calidad del Agua</title>
         <link rel="stylesheet" href="../styles.css">
+        
     </head>
     <header>
   <div class="icon1">
@@ -65,7 +66,11 @@ def generar_html():
     # Cerrar el contenido HTML
     html_content += """
             </table>
+           
         </div>
+         <h1 class="titulo-img-generada">TABLA GRAFICAMENTE</h1>
+        <img class="img-generada" src="../img/consumoAgua.png" alt="agua">
+       
     </body>
     </html>
     """

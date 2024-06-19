@@ -290,3 +290,19 @@ h2 {
   background-color: #11d5f8;
   transition: background-color 0.3s ease;
 }
+
+.img-generada {
+  width: 60%;
+  height: 50%;
+  margin: auto;
+}
+
+.titulo-img-generada {
+  margin: 50px auto;
+  color: white;
+
+}
+
+.titulo-img-generada:hover {
+  color: #0e38c5c2;
+}
